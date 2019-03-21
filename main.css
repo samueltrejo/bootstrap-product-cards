@@ -3,5 +3,9 @@ body {
 }
 
 .product {
-  background-color: white;
+  background-color: ;
+}
+
+.row {
+  box-sizing: border-box;
 }

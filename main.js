@@ -2,7 +2,7 @@ const products = [
   {
     title: 'product1',
     description: 'this is a a cool product',
-    imgURL: 'https://picsum.photos/200/300/?random',
+    imgURL: 'https://picsum.photos/100/100/?random',
     size: '4" x 4"',
     weight: '8 oz.',
     price1: '$1.99',
@@ -13,7 +13,7 @@ const products = [
   {
     title: 'product2',
     description: 'this is a a cool product',
-    imgURL: 'https://picsum.photos/200/300/?random',
+    imgURL: 'https://picsum.photos/100/100/?random',
     size: '4" x 4"',
     weight: '8 oz.',
     price1: '$1.99',
@@ -24,7 +24,7 @@ const products = [
   {
     title: 'product3',
     description: 'this is a a cool product',
-    imgURL: 'https://picsum.photos/200/300/?random',
+    imgURL: 'https://picsum.photos/100/100/?random',
     size: '4" x 4"',
     weight: '8 oz.',
     price1: '$1.99',
@@ -35,7 +35,7 @@ const products = [
   {
     title: 'product4',
     description: 'this is a a cool product',
-    imgURL: 'https://picsum.photos/200/300/?random',
+    imgURL: 'https://picsum.photos/100/100/?random',
     size: '4" x 4"',
     weight: '8 oz.',
     price1: '$1.99',
@@ -46,7 +46,7 @@ const products = [
   {
     title: 'product5',
     description: 'this is a a cool product',
-    imgURL: 'https://picsum.photos/200/300/?random',
+    imgURL: 'https://picsum.photos/100/100/?random',
     size: '4" x 4"',
     weight: '8 oz.',
     price1: '$1.99',
@@ -60,16 +60,17 @@ const products = [
 const domStringBuilder = () => {
   let domString = '';
   products.forEach((product) => {
-    domString += `<div class="product">`
-    domString += `<h2>${product.title}</h2>`
-    // domString += `<div>${product.description}</div>`
-    // domString += `<img src=${product.imgURL}>`
-    // domString += `<div>${product.size}</div>`
-    // domString += `<div>${product.weight}</div>`
-    // domString += `<div>${product.availability}</div>`
-    // domString += `<div>${product.price1}</div>`
-    // domString += `<div>${product.price2}</div>`
-    // domString += `<div>${product.price3}</div>`
+    domString += `<div class="col-4 product">`
+    
+    
+    domString += `<div class="card">`
+    domString += `  <div class="card-header">${product.title}</div>`
+    domString += `  <img src=${product.imgURL} class="card-img-top" alt="...">`
+    domString += `  <div class="card-body">`
+    domString += `    <p class="card-text">${product.description}</p>`
+    domString += `    <p class="card-text">${product.size}</p>`
+    domString += `  </div>`
+    domString += `</div>`
     domString += `</div>`
   })
   printToDom('products-container', domString);
